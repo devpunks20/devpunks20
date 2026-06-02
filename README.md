@@ -30,6 +30,7 @@ Fullstack-разработчик с **6-летним опытом**, основ�
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![aiogram](https://img.shields.io/badge/aiogram-26A5E4?style=flat-square&logo=telegram&logoColor=white)
 ![Gin](https://img.shields.io/badge/Gin-00ADD8?style=flat-square&logo=go&logoColor=white)
 ![Echo](https://img.shields.io/badge/Echo-00ADD8?style=flat-square&logo=go&logoColor=white)
 ![gRPC](https://img.shields.io/badge/gRPC-244C5A?style=flat-square&logo=google&logoColor=white)
@@ -38,6 +39,7 @@ Fullstack-разработчик с **6-летним опытом**, основ�
 ### Databases & Cache
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![ClickHouse](https://img.shields.io/badge/ClickHouse-FFCC01?style=flat-square&logo=clickhouse&logoColor=black)
 
 ### Frontend
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
@@ -49,6 +51,9 @@ Fullstack-разработчик с **6-летним опытом**, основ�
 ### Real-time & Streaming
 ![WebRTC](https://img.shields.io/badge/WebRTC-333333?style=flat-square&logo=webrtc&logoColor=white)
 ![WebSocket](https://img.shields.io/badge/WebSocket-010101?style=flat-square&logo=socketdotio&logoColor=white)
+![NATS](https://img.shields.io/badge/NATS-27AAE1?style=flat-square&logo=natsdotio&logoColor=white)
+![HTTP/3](https://img.shields.io/badge/HTTP%2F3-0052CC?style=flat-square&logo=httpie&logoColor=white)
+![QUIC](https://img.shields.io/badge/QUIC-0052CC?style=flat-square&logo=cloudflare&logoColor=white)
 
 ### DevOps & Observability
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
@@ -57,9 +62,19 @@ Fullstack-разработчик с **6-летним опытом**, основ�
 ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
 ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white)
 
-### Integrations
+### Integrations — AI & Media
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
+![ElevenLabs](https://img.shields.io/badge/ElevenLabs-000000?style=flat-square&logo=elevenlabs&logoColor=white)
+![fal.ai](https://img.shields.io/badge/fal.ai-000000?style=flat-square&logo=googlecloud&logoColor=white)
+![Kie.ai](https://img.shields.io/badge/kie.ai-6366F1?style=flat-square&logo=openai&logoColor=white)
+
+### Integrations — Payments & Auth
 ![Telegram](https://img.shields.io/badge/Telegram_Bot-26A5E4?style=flat-square&logo=telegram&logoColor=white)
 ![Stripe](https://img.shields.io/badge/Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white)
+![Robokassa](https://img.shields.io/badge/Robokassa-0066CC?style=flat-square&logo=googlepay&logoColor=white)
+![Privy](https://img.shields.io/badge/Privy-5B45FF?style=flat-square&logo=ethereum&logoColor=white)
+![Plaid](https://img.shields.io/badge/Plaid-111111?style=flat-square&logo=plaid&logoColor=white)
+![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat-square&logo=solana&logoColor=white)
 
 <details>
 <summary><b>📋 Полный список навыков</b></summary>
@@ -68,14 +83,16 @@ Fullstack-разработчик с **6-летним опытом**, основ�
 
 | Категория | Технологии |
 |-----------|------------|
-| **Backend** | Go (Gin, Echo), Python (Django, FastAPI, aiogram), gRPC, REST, WebSocket, JWT, protobuf, Celery, Celery Beat |
-| **Базы данных** | PostgreSQL, Redis, Bun, GORM, SQL-миграции |
-| **Real-time** | WebRTC, WebSocket, NATS, message brokers |
+| **Backend** | Go (Gin, Echo), Python (Django, Django Ninja, FastAPI, aiogram), gRPC, REST, WebSocket, JWT, protobuf, Celery, Celery Beat, Swagger |
+| **Базы данных** | PostgreSQL, Redis, ClickHouse, Bun, GORM, SQL-миграции |
+| **Real-time** | WebRTC, WebSocket, NATS, HTTP/3, QUIC, WebTransport, message brokers |
 | **Frontend** | React, Next.js, TypeScript, Vite, Tailwind CSS, Telegram Mini Apps |
-| **Интеграции** | Telegram Bot API, Stripe, Robokassa, LLM, TTS/STT, генерация медиа |
-| **DevOps** | Docker, Docker Compose, Nginx, GitHub Actions |
-| **Observability** | Prometheus, Grafana, structured logging |
-| **Прочее** | Git, Linux, webhook-интеграции, парсинг данных |
+| **AI & Media** | [OpenAI](https://openai.com/), [ElevenLabs](https://elevenlabs.io/) (TTS/STT), [fal.ai](https://fal.ai/), [kie.ai](https://kie.ai/), LLM, генерация изображений и видео |
+| **Payments & Web3** | Stripe, Robokassa, [Privy](https://www.privy.io/), Plaid, Solana, webhooks |
+| **Messaging** | Telegram Bot API, Telegram Mini Apps |
+| **DevOps** | Docker, Docker Compose, Nginx, GitHub Actions, Let's Encrypt |
+| **Observability** | Prometheus, Grafana, structured logging, метрики |
+| **Прочее** | Git, Linux, парсинг данных (PDF, Excel), i18n |
 
 </details>
 
