@@ -19,7 +19,7 @@
 
 Fullstack-разработчик с **6-летним опытом**, основа — backend на **Go** и **Python**. Проектирую и развиваю продукты end-to-end: от API и баз данных до React-интерфейсов и CI/CD.
 
-Специализация — микросервисы, real-time системы (WebSocket, WebRTC, gRPC), Telegram-продукты, AI-интеграции, биллинг и B2B-платформы.
+Специализация — микросервисы, real-time системы (WebSocket, WebRTC, gRPC), Telegram-продукты, **DeFi на TON** (DEX-агрегация, индексаторы), AI-интеграции, биллинг и B2B-платформы.
 
 ---
 
@@ -39,6 +39,9 @@ React · Next.js · TypeScript · Vite · Tailwind CSS · Telegram Mini Apps
 
 #### AI и генерация медиа
 [OpenAI](https://openai.com/) · [ElevenLabs](https://elevenlabs.io/) (TTS/STT) · [fal.ai](https://fal.ai/) · [kie.ai](https://kie.ai/) · LLM · image / video / audio generation
+
+#### Blockchain и DeFi
+[TON](https://ton.org/) · DEX-агрегаторы · индексатор блокчейна · swap routing · multi-hop paths · Jettons · TON Connect
 
 #### Платежи и Web3
 Stripe · Robokassa · [Privy](https://www.privy.io/) · Plaid · Solana · webhooks
@@ -72,6 +75,25 @@ Git · Linux · парсинг данных (PDF, Excel) · i18n
 **Результат:** production-ready платформа с горизонтальным масштабированием стриминга, монетизацией и автоматизированным деплоем инфраструктуры.
 
 `Go` · `gRPC` · `PostgreSQL` · `Redis` · `NATS` · `WebRTC` · `HTTP/3` · `React` · `TypeScript` · `Docker` · `GitHub Actions`
+
+---
+
+### Backend Developer — [RPine](https://rpine.xyz/)
+`2023 — настоящее время`
+
+Стартап в экосистеме **TON**: smart **DEX-агрегатор** — находит лучшие курсы на децентрализованных биржах, строит оптимальный маршрут свопа и даёт прозрачные комиссии без скрытых надбавок ([rpine.xyz](https://rpine.xyz/)).
+
+**Решение:**
+- Разработал **backend** платформы: API для котировок, свопов и интеграции с несколькими TON DEX (агрегация ликвидности из 4+ бирж)
+- Реализовал **индексатор блокчейна TON**: индексация транзакций, пулов и swap-событий для актуальных цен и аналитики в продукте
+- Спроектировал **Pathfinder** — движок поиска наиболее выгодного маршрута обмена, в том числе через промежуточные токены (multi-hop routing)
+- Собрал ядро **DEX-агрегатора**: smart rate discovery, сравнение маршрутов, оптимизация свопа с учётом комиссий и проскальзывания
+- Разработал **Telegram-бот** (RPine App): обмен токенов, подключение кошелька, **private pools** с гарантированной ценой на момент начала сделки
+- Поддерживал смежные продукты экосистемы: NFT-утилити, multisig для команд и DAO
+
+**Результат:** production DeFi-продукт на TON с умным роутингом свопов, прозрачным ценообразованием и удобным входом через Telegram — от индексации on-chain данных до исполнения сделки в боте.
+
+`Go` · `Python` · `PostgreSQL` · `Redis` · `TON` · `Telegram Bot API` · `Docker`
 
 ---
 
@@ -128,10 +150,10 @@ Telegram-бот для генерации фото, видео и музыки.
 
 ---
 
-### Fullstack Developer — [Screener Exchange Spread](https://screener-spread.rpine.xyz/) · pet-проект
+### Fullstack Developer — [Screener Exchange Spread](https://screener-spread.rpine.xyz/) · pet-проект · [RPine Lab](https://rpine.xyz/)
 `01.2025 — настоящее время`
 
-Скринер спредов и торговый бот для криптобирж.
+Скринер спредов и торговый бот для криптобирж (экосистема RPine).
 
 **Решение:**
 - Сбор котировок с нескольких бирж, расчёт **спредов** и арбитражных возможностей в real-time
