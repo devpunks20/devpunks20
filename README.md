@@ -1,6 +1,6 @@
 <div align="center">
 
-# Данил Шевнин
+# Данил
 
 **Fullstack / Backend Developer** · 6 лет опыта
 
@@ -17,25 +17,25 @@
 
 ## 👋 О себе
 
-Fullstack-разработчик с **6-летним опытом**, основа — backend на **Go** и **Python**. Проектирую и развиваю продукты end-to-end: от API и баз данных до React-интерфейсов и CI/CD.
+Fullstack-разработчик с **6-летним опытом**, основа — backend на **Go** и **Python**. Проектирую и развиваю продукты end-to-end: от API и баз данных до React-интерфейсов, отказоустойчивой инфраструктуры и CI/CD.
 
-Специализация — микросервисы, real-time системы (WebSocket, WebRTC, gRPC), Telegram-продукты, **DeFi на TON** (DEX-агрегация, индексаторы), AI-интеграции, биллинг и B2B-платформы.
+Специализация — микросервисы, real-time системы (WebSocket, WebRTC, gRPC), распределённые отказоустойчивые системы (Docker Swarm, PostgreSQL HA, multi-region), Telegram-продукты, **DeFi на TON** (DEX-агрегация, индексаторы), AI-интеграции, биллинг и B2B-платформы.
 
 ---
 
 ## 🛠 Навыки
 
 #### Backend
-Go (Gin, Echo) · Python (Django, Django Ninja, FastAPI, aiogram) · gRPC · REST · WebSocket · JWT · protobuf · Swagger · Celery · Celery Beat
+Go (Gin, Echo) · Python (Django, Django Ninja, FastAPI, aiogram) · gRPC (streaming) · REST · WebSocket · JWT · 2FA / TOTP · protobuf · Swagger · Celery · Celery Beat
 
 #### Базы данных и кэш
-PostgreSQL · Redis · ClickHouse · Bun · GORM · SQL-миграции
+PostgreSQL · **PostgreSQL HA (Patroni + etcd + HAProxy + PgBouncer)** · репликация · RO/RW-split · Redis · Redis Sentinel · ClickHouse · Bun · GORM · pgx · SQL-миграции (goose)
 
 #### Real-time и стриминг
 WebRTC · WebSocket · NATS · HTTP/3 · QUIC · WebTransport · message brokers
 
 #### Frontend
-React · Next.js · TypeScript · Vite · Tailwind CSS · Telegram Mini Apps
+React · Next.js · TypeScript · Vite · Tailwind CSS · TanStack Query / Table · Telegram Mini Apps
 
 #### AI и генерация медиа
 [OpenAI](https://openai.com/) · [ElevenLabs](https://elevenlabs.io/) (TTS/STT) · [fal.ai](https://fal.ai/) · [kie.ai](https://kie.ai/) · LLM · image / video / audio generation
@@ -50,10 +50,10 @@ Stripe · Robokassa · [Privy](https://www.privy.io/) · Plaid · Solana · webh
 Telegram Bot API · Telegram Mini Apps
 
 #### DevOps и observability
-Docker · Docker Compose · Nginx · GitHub Actions · Let's Encrypt · Prometheus · Grafana · structured logging
+Docker · Docker Compose · **Docker Swarm** · **Ansible** · **GlusterFS** · Nginx · nginx-proxy / acme-companion · Let's Encrypt · GitHub Actions (self-hosted runners) · private Docker registry · zero-downtime деплой · Prometheus · **VictoriaMetrics** · **VictoriaLogs** · **Vector** · **Grafana** · **Alertmanager** · node-exporter · cAdvisor · structured logging
 
 #### Прочее
-Git · Linux · парсинг данных (PDF, Excel) · i18n
+Git · Linux · multi-region / отказоустойчивые системы · парсинг данных (PDF, Excel) · i18n
 
 ---
 
@@ -97,20 +97,31 @@ Git · Linux · парсинг данных (PDF, Excel) · i18n
 
 ---
 
-### Backend Developer — [VNISH Monitoring](https://vnish-monitoring.com/)
+### Backend / Infrastructure Developer — [VNISH Monitoring](https://vnish-monitoring.com/)
 `03.2025 — настоящее время`
 
-Платформа мониторинга ASIC-майнеров с прошивкой VNISH.
+Мульти-региональная платформа мониторинга ASIC-майнеров с прошивкой VNISH: real-time телеметрия, алерты, групповые операции, Telegram Mini App и собственная отказоустойчивая инфраструктура.
 
-**Решение:**
-- Разработал backend на Go: **gRPC** и REST API для приёма и отдачи телеметрии
-- Реализовал сбор и агрегацию метрик в реальном времени: hashrate, температура, power consumption
-- Построил систему **алертов и Telegram-уведомлений** при отклонениях
-- Поддержал **agentless-мониторинг** через прошивку VNISH без отдельного агента на хосте
+**Backend и продукт:**
+- Backend на Go: **gRPC-стриминг** агентов + REST API (**Echo**) для приёма и отдачи телеметрии; Bun / pgx, JWT, **2FA (TOTP)**, миграции goose, Swagger
+- Real-time сбор и агрегация метрик (hashrate, температура, fan, power consumption) + **микро-батчинг** записи статусов (in-memory склейка по MAC → bulk-INSERT), чтобы запись не блокировала горячий путь
+- Система **алертов и Telegram-уведомлений** при отклонениях + email-уведомления через собственный mailserver
+- **Telegram Mini App** на React 19 / TypeScript / Vite / Tailwind / TanStack Query: дашборды, групповые операции над фермами, i18n
+- **Agentless-мониторинг** через прошивку VNISH + собственный агент (бинарник собирается per-партнёр через ldflags)
+- **Multi-region mesh**: кросс-доменный доступ к ASIC через Redis presence + peer gRPC federation
 
-**Результат:** единая платформа мониторинга майнинг-ферм с real-time дашбордом и оперативными алертами для операторов.
+**Инфраструктура (спроектировал и развернул с нуля):**
+- **Docker Swarm** кластер на 7 нод в 3 регионах (COM/RU/US), per-site placement, **zero-downtime** rolling updates (start-first)
+- **PostgreSQL HA**: Patroni + etcd + HAProxy + per-node PgBouncer, RO/RW-split (чтения с реплик), дуальный режим **cluster ↔ single-master** и авто-promote при изоляции площадки (`site-warden`)
+- **GlusterFS** — разделяемое хранилище (бинарники агентов, сертификаты, конфиги) на всех нодах
+- **Observability**: VictoriaMetrics + vmagent + VictoriaLogs + Vector + Grafana + vmalert + Alertmanager (per-node, gossip-HA), node-exporter / cAdvisor / postgres / redis exporters
+- **Edge**: nginx-proxy + acme-companion (Let's Encrypt) + внутренний per-node nginx (gRPC/HTTP routing)
+- **CI/CD**: GitHub Actions + self-hosted runners на manager-ноде, приватный Docker registry, автосборка образов и rollout сервисов
+- Полный **bootstrap кластера через Ansible** (prereqs → Swarm → секреты → стек → edge)
 
-`Go` · `gRPC` · `PostgreSQL` · `Redis` · `Docker`
+**Результат:** отказоустойчивая мульти-региональная платформа мониторинга майнинг-ферм с real-time дашбордом, алертами, групповыми операциями и полностью автоматизированным деплоем инфраструктуры.
+
+`Go` · `Echo` · `gRPC` · `WebSocket` · `Bun` · `pgx` · `PostgreSQL (Patroni/etcd/HAProxy/PgBouncer)` · `Redis` · `React` · `TypeScript` · `Docker Swarm` · `GlusterFS` · `Ansible` · `VictoriaMetrics` · `VictoriaLogs` · `Grafana` · `Alertmanager` · `Nginx` · `Let's Encrypt` · `GitHub Actions`
 
 ---
 
