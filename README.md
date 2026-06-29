@@ -67,6 +67,17 @@ Git · Linux · multi-region / fault-tolerant systems · data parsing (PDF, Exce
 
 A multi-region monitoring platform for ASIC miners running VNISH firmware: real-time telemetry, alerts, group operations, a Telegram Mini App, and a custom fault-tolerant infrastructure.
 
+<table>
+  <tr>
+    <td width="50%"><img src="assets/projects/VNISH4.jpg" alt="VNISH — analytics dashboard" width="100%"/></td>
+    <td width="50%"><img src="assets/projects/VNISH3.jpg" alt="VNISH — miner dashboard with charts" width="100%"/></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="assets/projects/VNISH2.jpg" alt="VNISH — farm device list" width="100%"/></td>
+    <td width="50%"><img src="assets/projects/VNISH1.png" alt="VNISH — farms overview" width="100%"/></td>
+  </tr>
+</table>
+
 **Backend & product:**
 - Go backend: **gRPC streaming** for agents + a REST API (**Echo**) to ingest and serve telemetry; Bun / pgx, JWT, **2FA (TOTP)**, goose migrations, Swagger
 - Real-time collection and aggregation of metrics (hashrate, temperature, fan, power consumption) + **micro-batching** of status writes (in-memory coalescing by MAC → bulk INSERT) so writes don't block the hot path
@@ -95,6 +106,23 @@ A multi-region monitoring platform for ASIC miners running VNISH firmware: real-
 
 A real-time video streaming and content generation platform (sign language, AI avatars).
 
+<img src="assets/projects/Signvano1.png" alt="Signvano — landing page" width="100%"/>
+
+<table>
+  <tr>
+    <td width="50%"><img src="assets/projects/Signvano5.png" alt="Signvano — quick actions" width="100%"/></td>
+    <td width="50%"><img src="assets/projects/Signvano2.png" alt="Signvano — cinematic avatars" width="100%"/></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="assets/projects/Signvano3.png" alt="Signvano — text to sign video chat" width="100%"/></td>
+    <td width="50%"><img src="assets/projects/Signvano6.png" alt="Signvano — video translator" width="100%"/></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="assets/projects/Signvano4.png" alt="Signvano — translate from website" width="100%"/></td>
+    <td width="50%"><img src="assets/projects/Signvano7.png" alt="Signvano — avatar creating" width="100%"/></td>
+  </tr>
+</table>
+
 **What I did:**
 - Designed a distributed architecture: an **API Gateway** (Go) plus standalone **streaming servers** with gRPC service discovery and load balancing
 - Built the video pipeline: WebSocket / **HTTP/3 + QUIC (WebTransport)** → WebRTC SFU → **NATS** → GPU clients over gRPC
@@ -113,6 +141,8 @@ A real-time video streaming and content generation platform (sign language, AI a
 `06.2026 — present`
 
 A cross-platform desktop app for **real-time bidirectional voice translation** in video calls (e.g. Google Meet): the interlocutor's speech is translated into your headphones, and your speech is translated into a virtual microphone — live.
+
+<img src="assets/projects/LiveVoice.png" alt="LiveVoice — desktop app session" width="100%"/>
 
 **What I did:**
 - Built a low-latency pipeline **audio capture → STT → translation → TTS** in both directions (incoming: peer → headphones; outgoing: mic → virtual mic)
@@ -133,6 +163,13 @@ A cross-platform desktop app for **real-time bidirectional voice translation** i
 
 An AI therapist on Telegram: chat with an LLM, a Mini App, subscriptions, content generation.
 
+<table>
+  <tr>
+    <td width="42%"><img src="assets/projects/Svetlana.png" alt="SvetlanaBot — onboarding and menu" width="100%"/></td>
+    <td width="58%"><img src="assets/projects/Svetlana2.png" alt="SvetlanaBot — streaming AI chat" width="100%"/></td>
+  </tr>
+</table>
+
 **What I did:**
 - Go backend: Telegram webhook, REST API, a **WebSocket chat** with streaming LLM responses
 - A **Telegram Mini App** in React: chat, onboarding, premium, files, voice messages
@@ -151,6 +188,15 @@ An AI therapist on Telegram: chat with an LLM, a Mini App, subscriptions, conten
 `2023 — present`
 
 A startup in the **TON** ecosystem: a smart **DEX aggregator** that finds the best rates across decentralized exchanges, builds the optimal swap route, and provides transparent fees with no hidden markups ([rpine.xyz](https://rpine.xyz/)).
+
+<img src="assets/projects/RPine1.png" alt="RPine — landing page" width="100%"/>
+
+<table>
+  <tr>
+    <td width="68%"><img src="assets/projects/RPine2.png" alt="RPine — app section (Pathfinder, private pools)" width="100%"/></td>
+    <td width="32%"><img src="assets/projects/RPine3.png" alt="RPine — Telegram mini app" width="100%"/></td>
+  </tr>
+</table>
 
 **What I did:**
 - Developed the platform **backend**: APIs for quotes, swaps, and integration with several TON DEXs (liquidity aggregation from 4+ exchanges)
@@ -171,6 +217,15 @@ A startup in the **TON** ecosystem: a smart **DEX aggregator** that finds the be
 
 A spread screener and trading bot for crypto exchanges (RPine ecosystem).
 
+<img src="assets/projects/Screener1.png" alt="Screener — cross-exchange price comparison" width="100%"/>
+
+<table>
+  <tr>
+    <td width="50%"><img src="assets/projects/Screener2.png" alt="Screener — trading bot strategies" width="100%"/></td>
+    <td width="50%"><img src="assets/projects/Screener3.png" alt="Screener — live chart and trade log" width="100%"/></td>
+  </tr>
+</table>
+
 **What I did:**
 - Collection of quotes from multiple exchanges, computation of **spreads** and arbitrage opportunities in real time
 - **Trading logic** and notifications about profitable pairs
@@ -188,6 +243,15 @@ A spread screener and trading bot for crypto exchanges (RPine ecosystem).
 
 A Telegram bot for generating photos, videos, and music.
 
+<img src="assets/projects/Pingvin3.jpg" alt="PhotoPingvin — AI-generated photo" width="100%"/>
+
+<table>
+  <tr>
+    <td width="50%"><img src="assets/projects/Pingvin.png" alt="PhotoPingvin — bot intro and menu" width="100%"/></td>
+    <td width="50%"><img src="assets/projects/Pingvin2.png" alt="PhotoPingvin — generation flow" width="100%"/></td>
+  </tr>
+</table>
+
 **What I did:**
 - Backend: **aiogram** + a REST API on **Django Ninja**
 - An asynchronous generation pipeline: **Celery + Celery Beat**, queues on Redis
@@ -204,6 +268,8 @@ A Telegram bot for generating photos, videos, and music.
 `04.2026 — present`
 
 An EdTech platform for learning American Sign Language (ASL).
+
+<img src="assets/projects/Otty.png" alt="Otty ASL — gamified learning dashboard" width="100%"/>
 
 **What I did:**
 - Gamified learning: **lessons, dictionary, practice, leaderboard**
