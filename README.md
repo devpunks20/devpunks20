@@ -19,7 +19,7 @@
 
 Fullstack developer with **6 years of experience**, with a backend core in **Go** and **Python**. I design and grow products end-to-end: from APIs and databases to React interfaces, fault-tolerant infrastructure, and CI/CD.
 
-I specialize in microservices, real-time systems (WebSocket, WebRTC, gRPC), distributed fault-tolerant systems (Docker Swarm, PostgreSQL HA, multi-region), Telegram products, **DeFi on TON** (DEX aggregation, indexers), AI integrations, billing, and B2B platforms.
+I specialize in microservices, real-time systems (WebSocket, WebRTC, gRPC), distributed fault-tolerant systems (Docker Swarm, PostgreSQL HA, multi-region), cross-platform desktop apps with native Rust audio (Tauri / Electron, real-time speech-to-speech translation), Telegram products, **DeFi on TON** (DEX aggregation, indexers), AI integrations, billing, and B2B platforms.
 
 ---
 
@@ -34,11 +34,14 @@ PostgreSQL · **PostgreSQL HA (Patroni + etcd + HAProxy + PgBouncer)** · replic
 #### Real-time & streaming
 WebRTC · WebSocket · NATS · HTTP/3 · QUIC · WebTransport · message brokers
 
+#### Desktop & native audio
+Rust (cpal, WASAPI, tokio, serde) · **Tauri 2** · Electron · N-API · real-time audio (PCM capture, resampling, loopback / virtual audio devices, PulseAudio/pactl)
+
 #### Frontend
-React · Next.js · TypeScript · Vite · Tailwind CSS · TanStack Query / Table · Telegram Mini Apps
+React · Next.js · TypeScript · Vite · Tailwind CSS · TanStack Query / Table · Telegram Mini Apps · Chrome Extensions
 
 #### AI & media generation
-[OpenAI](https://openai.com/) · [ElevenLabs](https://elevenlabs.io/) (TTS/STT) · [fal.ai](https://fal.ai/) · [kie.ai](https://kie.ai/) · LLM · image / video / audio generation
+[OpenAI](https://openai.com/) · [Deepgram](https://deepgram.com/) (STT/TTS) · [Google Gemini Live](https://ai.google.dev/) (real-time STT + translation + TTS) · [ElevenLabs](https://elevenlabs.io/) (TTS/STT) · Edge TTS · [fal.ai](https://fal.ai/) · [kie.ai](https://kie.ai/) · LLM · image / video / audio generation
 
 #### Blockchain & DeFi
 [TON](https://ton.org/) · DEX aggregators · blockchain indexer · swap routing · multi-hop paths · Jettons · TON Connect
@@ -58,44 +61,6 @@ Git · Linux · multi-region / fault-tolerant systems · data parsing (PDF, Exce
 ---
 
 ## 💼 Experience
-
-### Fullstack Developer — [Signvano](https://sgvno.com)
-`08.2025 — present`
-
-A real-time video streaming and content generation platform (sign language, AI avatars).
-
-**What I did:**
-- Designed a distributed architecture: an **API Gateway** (Go) plus standalone **streaming servers** with gRPC service discovery and load balancing
-- Built the video pipeline: WebSocket / **HTTP/3 + QUIC (WebTransport)** → WebRTC SFU → **NATS** → GPU clients over gRPC
-- Created a **task queue** abstraction (PostgreSQL / Redis) for content generation without code changes
-- Integrated **Stripe billing**: subscriptions, checkout, webhooks
-- Built a React **admin panel**: CRUD, analytics, monitoring of streaming services
-- Set up **CI/CD** (GitHub Actions): automated deployment of streaming nodes across multiple servers
-
-**Result:** a production-ready platform with horizontal streaming scalability, monetization, and automated infrastructure deployment.
-
-`Go` · `gRPC` · `PostgreSQL` · `Redis` · `NATS` · `WebRTC` · `HTTP/3` · `React` · `TypeScript` · `Docker` · `GitHub Actions`
-
----
-
-### Backend Developer — [RPine](https://rpine.xyz/)
-`2023 — present`
-
-A startup in the **TON** ecosystem: a smart **DEX aggregator** that finds the best rates across decentralized exchanges, builds the optimal swap route, and provides transparent fees with no hidden markups ([rpine.xyz](https://rpine.xyz/)).
-
-**What I did:**
-- Developed the platform **backend**: APIs for quotes, swaps, and integration with several TON DEXs (liquidity aggregation from 4+ exchanges)
-- Built a **TON blockchain indexer**: indexing of transactions, pools, and swap events for up-to-date pricing and in-product analytics
-- Designed the **Pathfinder** — an engine that finds the most profitable swap route, including through intermediate tokens (multi-hop routing)
-- Built the core of the **DEX aggregator**: smart rate discovery, route comparison, swap optimization accounting for fees and slippage
-- Developed the **Telegram bot** (RPine App): token swaps, wallet connection, **private pools** with a price guaranteed at the moment a trade starts
-- Maintained adjacent ecosystem products: NFT utilities, multisig for teams and DAOs
-
-**Result:** a production DeFi product on TON with smart swap routing, transparent pricing, and an easy entry point via Telegram — from on-chain data indexing to trade execution in the bot.
-
-`Go` · `Python` · `PostgreSQL` · `Redis` · `TON` · `Telegram Bot API` · `Docker`
-
----
 
 ### Backend / Infrastructure Developer — [VNISH Monitoring](https://vnish-monitoring.com/)
 `03.2025 — present`
@@ -125,6 +90,44 @@ A multi-region monitoring platform for ASIC miners running VNISH firmware: real-
 
 ---
 
+### Fullstack Developer — [Signvano](https://sgvno.com)
+`08.2025 — present`
+
+A real-time video streaming and content generation platform (sign language, AI avatars).
+
+**What I did:**
+- Designed a distributed architecture: an **API Gateway** (Go) plus standalone **streaming servers** with gRPC service discovery and load balancing
+- Built the video pipeline: WebSocket / **HTTP/3 + QUIC (WebTransport)** → WebRTC SFU → **NATS** → GPU clients over gRPC
+- Created a **task queue** abstraction (PostgreSQL / Redis) for content generation without code changes
+- Integrated **Stripe billing**: subscriptions, checkout, webhooks
+- Built a React **admin panel**: CRUD, analytics, monitoring of streaming services
+- Set up **CI/CD** (GitHub Actions): automated deployment of streaming nodes across multiple servers
+
+**Result:** a production-ready platform with horizontal streaming scalability, monetization, and automated infrastructure deployment.
+
+`Go` · `gRPC` · `PostgreSQL` · `Redis` · `NATS` · `WebRTC` · `HTTP/3` · `React` · `TypeScript` · `Docker` · `GitHub Actions`
+
+---
+
+### Fullstack Developer — LiveVoice · pet project
+`06.2026 — present`
+
+A cross-platform desktop app for **real-time bidirectional voice translation** in video calls (e.g. Google Meet): the interlocutor's speech is translated into your headphones, and your speech is translated into a virtual microphone — live.
+
+**What I did:**
+- Built a low-latency pipeline **audio capture → STT → translation → TTS** in both directions (incoming: peer → headphones; outgoing: mic → virtual mic)
+- Wrote a native **audio engine in Rust** (cpal, **WASAPI loopback** on Windows, **PulseAudio / pactl** null-sink routing on Linux, resampling via rubato), exposed to Node via **N-API**
+- Integrated multiple AI providers: **Deepgram** (live STT, TTS, Agent "think" translation over WebSocket), **Google Gemini Live** (unified STT + translation + TTS in a single WebSocket), **Kie**, and **Edge TTS**
+- Implemented an **echo guard** (preventing the outgoing TTS from being re-captured and re-translated), a **TTS cache**, and **virtual microphone** routing (VB-Cable / null-sink)
+- Designed a **Chrome extension** and a desktop UI (dashboard) over a shared WebSocket protocol (TypeScript + Zod)
+- Leading a full **migration from Electron + Node to Tauri 2** with an all-Rust backend (single process, in-process PCM, no internal network hop)
+
+**Result:** a working real-time speech-to-speech translation tool for live calls, with a native cross-platform audio stack and a pluggable set of STT/TTS/translation providers.
+
+`Rust` · `cpal` · `WASAPI` · `Tauri` · `Electron` · `Node.js` · `TypeScript` · `Zod` · `WebSocket` · `Deepgram` · `Google Gemini Live` · `Edge TTS` · `Chrome Extension`
+
+---
+
 ### Fullstack Developer — [SvetlanaBot](https://t.me/svetlanapsyybot)
 `03.2026 — present`
 
@@ -144,20 +147,22 @@ An AI therapist on Telegram: chat with an LLM, a Mini App, subscriptions, conten
 
 ---
 
-### Backend Developer — [PhotoPingvin Bot](https://t.me/photopingvin_bot)
-`02.2025 — present`
+### Backend Developer — [RPine](https://rpine.xyz/)
+`2023 — present`
 
-A Telegram bot for generating photos, videos, and music.
+A startup in the **TON** ecosystem: a smart **DEX aggregator** that finds the best rates across decentralized exchanges, builds the optimal swap route, and provides transparent fees with no hidden markups ([rpine.xyz](https://rpine.xyz/)).
 
 **What I did:**
-- Backend: **aiogram** + a REST API on **Django Ninja**
-- An asynchronous generation pipeline: **Celery + Celery Beat**, queues on Redis
-- Integration of AI providers (**fal.ai**, **kie.ai**, and others) for photo, video, and audio
-- **Robokassa**: billing, user balance, paying for generations
+- Developed the platform **backend**: APIs for quotes, swaps, and integration with several TON DEXs (liquidity aggregation from 4+ exchanges)
+- Built a **TON blockchain indexer**: indexing of transactions, pools, and swap events for up-to-date pricing and in-product analytics
+- Designed the **Pathfinder** — an engine that finds the most profitable swap route, including through intermediate tokens (multi-hop routing)
+- Built the core of the **DEX aggregator**: smart rate discovery, route comparison, swap optimization accounting for fees and slippage
+- Developed the **Telegram bot** (RPine App): token swaps, wallet connection, **private pools** with a price guaranteed at the moment a trade starts
+- Maintained adjacent ecosystem products: NFT utilities, multisig for teams and DAOs
 
-**Result:** reliable background processing of long-running AI jobs with monetization via Telegram, without blocking the bot.
+**Result:** a production DeFi product on TON with smart swap routing, transparent pricing, and an easy entry point via Telegram — from on-chain data indexing to trade execution in the bot.
 
-`Python` · `Django` · `Django Ninja` · `aiogram` · `Celery` · `Redis` · `PostgreSQL` · `Docker`
+`Go` · `Python` · `PostgreSQL` · `Redis` · `TON` · `Telegram Bot API` · `Docker`
 
 ---
 
@@ -178,6 +183,23 @@ A spread screener and trading bot for crypto exchanges (RPine ecosystem).
 
 ---
 
+### Backend Developer — [PhotoPingvin Bot](https://t.me/photopingvin_bot)
+`02.2025 — present`
+
+A Telegram bot for generating photos, videos, and music.
+
+**What I did:**
+- Backend: **aiogram** + a REST API on **Django Ninja**
+- An asynchronous generation pipeline: **Celery + Celery Beat**, queues on Redis
+- Integration of AI providers (**fal.ai**, **kie.ai**, and others) for photo, video, and audio
+- **Robokassa**: billing, user balance, paying for generations
+
+**Result:** reliable background processing of long-running AI jobs with monetization via Telegram, without blocking the bot.
+
+`Python` · `Django` · `Django Ninja` · `aiogram` · `Celery` · `Redis` · `PostgreSQL` · `Docker`
+
+---
+
 ### Fullstack Developer — [Otty ASL](https://otty.go-rshok.ru)
 `04.2026 — present`
 
@@ -192,6 +214,23 @@ An EdTech platform for learning American Sign Language (ASL).
 **Result:** an interactive ASL learning platform with retention through gamification and a clear user journey.
 
 `React` · `TypeScript` · `PostgreSQL` · `Docker`
+
+---
+
+### Backend Developer — [GetRealPrice](https://getrealprice.com)
+`05.2022 — 05.2023`
+
+A B2B SaaS: product matching and price monitoring for retail and FMCG ([13 countries](https://getrealprice.com/)).
+
+**What I did:**
+- Backend on **Django** and **FastAPI**: REST APIs for B2B clients
+- Asynchronous **price parsing and monitoring** via Celery workers
+- **Product matching** — matching the same product across marketplaces and stores
+- PostgreSQL + Redis optimization: queues, caching of frequent queries
+
+**Result:** a scalable backend for price monitoring and product matching, used by enterprise clients in multiple countries.
+
+`Python` · `Django` · `FastAPI` · `Celery` · `Redis` · `PostgreSQL` · `Docker`
 
 ---
 
@@ -210,23 +249,6 @@ A Web3 SaaS for crypto companies: contracts, signatures, treasury, compliance.
 **Result:** an all-in-one platform for crypto startups — from contract generation to signing and financial analytics in a single product.
 
 `Go` · `Gin` · `GORM` · `PostgreSQL` · `Next.js` · `TypeScript` · `Privy` · `Plaid` · `Docker`
-
----
-
-### Backend Developer — [GetRealPrice](https://getrealprice.com)
-`05.2022 — 05.2023`
-
-A B2B SaaS: product matching and price monitoring for retail and FMCG ([13 countries](https://getrealprice.com/)).
-
-**What I did:**
-- Backend on **Django** and **FastAPI**: REST APIs for B2B clients
-- Asynchronous **price parsing and monitoring** via Celery workers
-- **Product matching** — matching the same product across marketplaces and stores
-- PostgreSQL + Redis optimization: queues, caching of frequent queries
-
-**Result:** a scalable backend for price monitoring and product matching, used by enterprise clients in multiple countries.
-
-`Python` · `Django` · `FastAPI` · `Celery` · `Redis` · `PostgreSQL` · `Docker`
 
 ---
 
