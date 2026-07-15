@@ -11,6 +11,10 @@
 [![Telegram](https://img.shields.io/badge/Telegram-@go__rshok-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/go_rshok)
 [![GitHub](https://img.shields.io/badge/GitHub-devpunks20-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/devpunks20)
 
+<br/>
+
+**EN** · [RU](README.ru.md)
+
 </div>
 
 ---
