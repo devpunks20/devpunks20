@@ -19,7 +19,7 @@
 
 Fullstack developer with **6 years of experience**, with a backend core in **Go** and **Python**. I design and grow products end-to-end: from APIs and databases to React interfaces, fault-tolerant infrastructure, and CI/CD.
 
-I specialize in microservices, real-time systems (WebSocket, WebRTC, gRPC), distributed fault-tolerant systems (Docker Swarm, PostgreSQL HA, multi-region), cross-platform desktop apps with native Rust audio (Tauri / Electron, real-time speech-to-speech translation), Telegram products, **DeFi on TON** (DEX aggregation, indexers), AI integrations, billing, and B2B platforms.
+I specialize in microservices, real-time systems (WebSocket, WebRTC, gRPC), distributed fault-tolerant systems (Docker Swarm, PostgreSQL HA, multi-region), cross-platform desktop apps with native Rust audio (Tauri / Electron, speech-to-speech and **sign-language** translation), Telegram products, **DeFi on TON** (DEX aggregation, indexers), AI integrations, billing, and B2B platforms.
 
 ---
 
@@ -35,13 +35,13 @@ PostgreSQL · **PostgreSQL HA (Patroni + etcd + HAProxy + PgBouncer)** · replic
 WebRTC · WebSocket · NATS · HTTP/3 · QUIC · WebTransport · message brokers
 
 #### Desktop & native audio
-Rust (cpal, WASAPI, tokio, serde) · **Tauri 2** · Electron · N-API · real-time audio (PCM capture, resampling, loopback / virtual audio devices, PulseAudio/pactl)
+Rust (cpal, WASAPI, tokio, serde, **Axum**, **SQLx**) · **Tauri 2** · Electron · N-API · Android · real-time audio (PCM capture, resampling, loopback / virtual audio devices, PulseAudio/pactl) · seamless video playback
 
 #### Frontend
 React · Next.js · TypeScript · Vite · Tailwind CSS · TanStack Query / Table · Telegram Mini Apps · Chrome Extensions
 
 #### AI & media generation
-[OpenAI](https://openai.com/) · [Deepgram](https://deepgram.com/) (STT/TTS) · [Google Gemini Live](https://ai.google.dev/) (real-time STT + translation + TTS) · [ElevenLabs](https://elevenlabs.io/) (TTS/STT) · Edge TTS · [fal.ai](https://fal.ai/) · [kie.ai](https://kie.ai/) · LLM · image / video / audio generation
+[OpenAI](https://openai.com/) · [Deepgram](https://deepgram.com/) (STT/TTS) · [Google Gemini](https://ai.google.dev/) / Gemini Live (gloss, real-time STT + translation + TTS) · [ElevenLabs](https://elevenlabs.io/) (TTS/STT) · Edge TTS · [fal.ai](https://fal.ai/) · [kie.ai](https://kie.ai/) · LLM · image / video / audio generation · **RIFE** / FFmpeg video pipelines
 
 #### Blockchain & DeFi
 [TON](https://ton.org/) · DEX aggregators · blockchain indexer · swap routing · multi-hop paths · Jettons · TON Connect
@@ -155,6 +155,34 @@ A cross-platform desktop app for **real-time bidirectional voice translation** i
 **Result:** a working real-time speech-to-speech translation tool for live calls, with a native cross-platform audio stack and a pluggable set of STT/TTS/translation providers.
 
 `Rust` · `cpal` · `WASAPI` · `Tauri` · `Electron` · `Node.js` · `TypeScript` · `Zod` · `WebSocket` · `Deepgram` · `Google Gemini Live` · `Edge TTS` · `Chrome Extension`
+
+---
+
+### Fullstack Developer — [SignSync](https://signsync.go-rshok.ru/) · pet project
+`06.2026 — present`
+
+A cross-platform **Russian Sign Language (RSL)** translator: speech or text → gloss → seamless avatar video. Desktop (Windows/Linux), Android, a product landing, and a Rust backend for auth, credits, STT proxy, and protected clip delivery.
+
+<img src="assets/projects/SignSync1.png" alt="SignSync — desktop app (dark)" width="100%"/>
+
+<table>
+  <tr>
+    <td width="68%"><img src="assets/projects/SignSync2.png" alt="SignSync — desktop app (light)" width="100%"/></td>
+    <td width="32%"><img src="assets/projects/SignSync3.png" alt="SignSync — narrow / mobile layout" width="100%"/></td>
+  </tr>
+</table>
+
+**What I did:**
+- Built an end-to-end pipeline **mic / text → STT → Gemini gloss (РЖЯ) → playlist of seamless clips** with batch and **realtime** modes
+- Shipped a **Tauri 2** app (React 19 / TypeScript / Vite / Tailwind + Rust): native **cpal** audio capture, provider keys in Stronghold, dual-layer **seamless video player** (crossfade, REST morph trim, Android WebView quirks)
+- Wrote a **Rust API (Axum + SQLx + PostgreSQL)**: Telegram login (deeplink + webhook), JWT, users / **credits** / **api_key**, STT proxy (**Deepgram** / **ElevenLabs**, HTTP + WebSocket), release catalog and downloads
+- Built a React landing with **Telegram QR / deeplink auth**, personal cabinet (API key, credits), and multi-platform download grid (AppImage, Windows, Android)
+- Designed a GPU video pipeline (**RIFE** + FFmpeg): normalize every clip so it starts/ends on the same REST pose for jump-free chaining; video-manifest + nginx **`auth_request`** gate for `/clips/`
+- Infra & CI: Docker Compose (backend, landing, nginx, Postgres), edge TLS, **GitHub Actions** builds for Linux / Windows / Android
+
+**Result:** a working RSL translation product with cross-platform clients, Telegram-based accounts, monetization hooks (credits / API key), protected media delivery, and automated desktop/mobile releases.
+
+`Rust` · `Axum` · `SQLx` · `PostgreSQL` · `Tauri 2` · `React` · `TypeScript` · `Vite` · `Tailwind` · `cpal` · `WebSocket` · `Deepgram` · `ElevenLabs` · `Google Gemini` · `Telegram Auth` · `Nginx` · `RIFE` · `Docker` · `GitHub Actions`
 
 ---
 
@@ -333,6 +361,6 @@ Major: **Programmer**
 
 <br/>
 
-<sub>Last updated: June 2026</sub>
+<sub>Last updated: July 2026</sub>
 
 </div>
