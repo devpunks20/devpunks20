@@ -124,7 +124,7 @@ A multi-region monitoring platform for ASIC miners running VNISH firmware: real-
 
 ---
 
-### Fullstack Developer — [Signvano](https://sgvno.com)
+### Fullstack Developer — [Signvano](https://platform.sgvno.com)
 `08.2025 — present`
 
 A real-time video streaming and content generation platform (sign language, AI avatars).
