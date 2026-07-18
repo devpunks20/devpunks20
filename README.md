@@ -1,8 +1,8 @@
 <div align="center">
 
-# Danil
+# Danil Shevnin
 
-**Fullstack / Backend Developer** · 6 years of experience
+**Fullstack / Backend Developer** · 6 years of experience · 24 y.o.
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=22&pause=1000&color=36BCF7&center=true&vCenter=true&width=600&lines=Go+%7C+Python+%7C+React;Microservices+%26+real-time;Telegram+%7C+Web3+%7C+AI+products)](https://git.io/typing-svg)
 
@@ -15,15 +15,34 @@
 
 **EN** · [RU](README.ru.md)
 
+<br/>
+
+📧 [todd.develop@gmail.com](mailto:todd.develop@gmail.com) · [developer2033@yandex.ru](mailto:developer2033@yandex.ru)  
+📱 [+7 988 364-08-61](tel:+79883640861) · [+7 978 972-23-00](tel:+79789722300)
+
 </div>
 
 ---
 
 ## 👋 About me
 
-Fullstack developer with **6 years of experience**, with a backend core in **Go** and **Python**. I design and grow products end-to-end: from APIs and databases to React interfaces, fault-tolerant infrastructure, and CI/CD.
+Fullstack developer, **6 years of experience**, 24 y.o. Hold a driver's license. Main languages — **Go** and **Python**; also React / TypeScript and Rust. I build products from idea to launch: backend, UI, infrastructure, and deploy.
 
-I specialize in microservices, real-time systems (WebSocket, WebRTC, gRPC), distributed fault-tolerant systems (Docker Swarm, PostgreSQL HA, multi-region), cross-platform desktop apps with native Rust audio (Tauri / Electron, speech-to-speech and **sign-language** translation), Telegram products, **DeFi on TON** (DEX aggregation, indexers), AI integrations, billing, and B2B platforms.
+Strong areas: microservices, real-time systems, fault-tolerant infrastructure, Telegram bots and Mini Apps, AI integrations, payments, DeFi on TON, desktop apps (Tauri / Electron), speech-to-speech and **sign-language** translation.
+
+Proactive employee: I suggest improvements myself, get management buy-in, and deliver the implementation. Comfortable both in a team and working independently.
+
+---
+
+## 💡 Soft skills
+
+- **Punctuality** — deliver on time, comfortable with fixed deadlines
+- **Responsibility** — take ownership of hard tasks and finish them; flag risks early
+- **Initiative** — propose improvements, then lead and implement after approval
+- **Multitasking** — run several projects in parallel without losing quality
+- **Self-management** — plan work and priorities myself; do not need constant oversight
+- **Fast learning** — quickly pick up new technologies when the product needs them
+- **Communication** — explain decisions clearly to teammates and management
 
 ---
 
@@ -352,8 +371,17 @@ A Web3 SaaS for crypto companies: contracts, signatures, treasury, compliance.
 
 ## 🎓 Education
 
-**Vocational secondary education**  
-Major: **Programmer**
+**Simferopol Polytechnic College**  
+Major: **Information Systems and Programming** · Qualification: **Programmer**  
+Vocational secondary education
+
+---
+
+## 🎯 Hobbies & interests
+
+- **Dog training & animal psychology** — I train my dog, study zoopsychology, and completed a dog-training course. It builds patience, systematic thinking, and feedback loops — the same habits I use in engineering.
+- **Continuous growth in IT** — actively exploring AI-assisted development (“vibe coding”): courses on multi-agent systems, agent orchestration, and shipping LLM features into products. I follow AI-assisted engineering practices and apply them in real work right away.
+- **Pet projects across domains** — I regularly build my own products to learn new stacks and domains: real-time voice translation (LiveVoice), Russian Sign Language translator (SignSync), ASL EdTech (Otty). For me this is how I keep growing as an engineer instead of staying in one niche.
 
 ---
 
