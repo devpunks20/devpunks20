@@ -379,7 +379,7 @@ Vocational secondary education
 
 ## 🎯 Hobbies & interests
 
-- **Dog training & animal psychology** — I train my dog, study zoopsychology, and completed a dog-training course. It builds patience, systematic thinking, and feedback loops — the same habits I use in engineering.
+- **Dog training & animal psychology** — I train my dog, study zoopsychology, and completed a dog-training course.
 - **Continuous growth in IT** — actively exploring AI-assisted development (“vibe coding”): courses on multi-agent systems, agent orchestration, and shipping LLM features into products. I follow AI-assisted engineering practices and apply them in real work right away.
 - **Pet projects across domains** — I regularly build my own products to learn new stacks and domains: real-time voice translation (LiveVoice), Russian Sign Language translator (SignSync), ASL EdTech (Otty). For me this is how I keep growing as an engineer instead of staying in one niche.
 
