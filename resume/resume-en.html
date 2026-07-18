@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Danil Shevnin — Fullstack / Backend Developer</title>
+<style>
+  @page { size: A4; margin: 14mm 16mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "DejaVu Sans", "Noto Sans", Arial, sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.35;
+    color: #1a1a1a;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  a { color: #1565c0; text-decoration: none; }
+  header {
+    border-bottom: 2.5px solid #1565c0;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  h1 { font-size: 22pt; font-weight: 700; letter-spacing: -0.02em; }
+  .subtitle { font-size: 11pt; color: #333; margin-top: 2px; }
+  .contacts { margin-top: 6px; font-size: 8.5pt; color: #444; }
+  .contacts span { margin-right: 12px; }
+  .meta { margin-top: 4px; font-size: 8.5pt; color: #555; }
+  .soft { margin: 0 0 4px 14px; font-size: 8.5pt; }
+  .edu-block { font-size: 9pt; }
+  .edu-block .school { font-weight: 700; }
+  .edu-block .details { color: #333; margin-top: 2px; }
+  .hobbies { margin: 0 0 4px 14px; font-size: 8.5pt; }
+  h2 {
+    font-size: 11pt;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #1565c0;
+    border-bottom: 1px solid #c5d8f0;
+    padding-bottom: 3px;
+    margin: 14px 0 8px;
+  }
+  .about p { margin-bottom: 6px; }
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+  .skill-row { font-size: 8.5pt; }
+  .skill-row b { color: #222; }
+  .job { margin-bottom: 12px; page-break-inside: avoid; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .job-title { font-weight: 700; font-size: 10pt; }
+  .job-dates { font-size: 8.5pt; color: #555; white-space: nowrap; }
+  .job-desc { font-size: 8.5pt; color: #333; margin: 3px 0 4px; font-style: italic; }
+  ul { margin: 0 0 4px 14px; }
+  li { margin-bottom: 2px; }
+  .result { font-size: 8.5pt; margin-top: 3px; }
+  .stack { font-size: 7.5pt; color: #555; margin-top: 3px; }
+  .edu { font-size: 9.5pt; }
+  footer {
+    margin-top: 16px;
+    padding-top: 8px;
+    border-top: 1px solid #ddd;
+    font-size: 8pt;
+    color: #666;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Danil Shevnin</h1>
+  <div class="subtitle">Fullstack / Backend Developer · 6 years of experience · 24 y.o.</div>
+  <div class="contacts">
+    <span>Telegram: <a href="https://t.me/go_rshok">@go_rshok</a></span>
+    <span>GitHub: <a href="https://github.com/devpunks20">devpunks20</a></span>
+  </div>
+  <div class="contacts">
+    <span>Email: <a href="mailto:todd.develop@gmail.com">todd.develop@gmail.com</a></span>
+    <span><a href="mailto:developer2033@yandex.ru">developer2033@yandex.ru</a></span>
+  </div>
+  <div class="contacts">
+    <span>Phone: <a href="tel:+79883640861">+7&nbsp;988&nbsp;364-08-61</a></span>
+    <span><a href="tel:+79789722300">+7&nbsp;978&nbsp;972-23-00</a></span>
+  </div>
+</header>
+
+<h2>About me</h2>
+<div class="about">
+  <p>Fullstack developer, <b>6 years of experience</b>, 24 y.o. Hold a driver's license. Main languages — <b>Go</b> and <b>Python</b>; also React / TypeScript and Rust. I build products from idea to launch: backend, UI, infrastructure, and deploy.</p>
+  <p>Strong areas: microservices, real-time systems, fault-tolerant infrastructure, Telegram bots and Mini Apps, AI integrations, payments, DeFi on TON, desktop apps (Tauri / Electron).</p>
+  <p>Proactive employee: I suggest improvements myself, get management buy-in, and deliver the implementation. Comfortable both in a team and working independently.</p>
+</div>
+
+<h2>Soft skills</h2>
+<ul class="soft">
+  <li><b>Punctuality</b> — deliver on time, comfortable with fixed deadlines</li>
+  <li><b>Responsibility</b> — take ownership of hard tasks and finish them; flag risks early</li>
+  <li><b>Initiative</b> — propose improvements, then lead and implement after approval</li>
+  <li><b>Multitasking</b> — run several projects in parallel without losing quality</li>
+  <li><b>Self-management</b> — plan work and priorities myself; do not need constant oversight</li>
+  <li><b>Fast learning</b> — quickly pick up new technologies when the product needs them</li>
+  <li><b>Communication</b> — explain decisions clearly to teammates and management</li>
+</ul>
+
+<h2>Skills</h2>
+<div class="skills">
+  <div class="skill-row"><b>Backend:</b> Go (Gin, Echo), Python (Django, FastAPI, aiogram), gRPC, REST, WebSocket, JWT, 2FA/TOTP, Celery</div>
+  <div class="skill-row"><b>Databases:</b> PostgreSQL, PostgreSQL HA (Patroni/etcd/HAProxy/PgBouncer), Redis, ClickHouse, Bun, GORM, pgx</div>
+  <div class="skill-row"><b>Real-time:</b> WebRTC, WebSocket, NATS, HTTP/3, QUIC, WebTransport</div>
+  <div class="skill-row"><b>Desktop:</b> Rust (cpal, Axum, SQLx), Tauri 2, Electron, N-API, Android</div>
+  <div class="skill-row"><b>Frontend:</b> React, Next.js, TypeScript, Vite, Tailwind, TanStack Query, Telegram Mini Apps</div>
+  <div class="skill-row"><b>AI:</b> OpenAI, Deepgram, Google Gemini / Gemini Live, ElevenLabs, Edge TTS, fal.ai, kie.ai, RIFE</div>
+  <div class="skill-row"><b>Blockchain:</b> TON, DEX aggregators, indexer, swap routing, Jettons, TON Connect</div>
+  <div class="skill-row"><b>Payments:</b> Stripe, Robokassa, Privy, Plaid, Solana</div>
+  <div class="skill-row"><b>DevOps:</b> Docker, Docker Swarm, Ansible, GlusterFS, Nginx, GitHub Actions, Prometheus, VictoriaMetrics, Grafana</div>
+  <div class="skill-row"><b>Other:</b> Git, Linux, multi-region / fault-tolerant systems, i18n</div>
+</div>
+
+<h2>Experience</h2>
+
+<article class="job">
+  <div class="job-head">
+    <div class="job-title">Backend / Infrastructure Developer — <a href="https://vnish-monitoring.com/">VNISH Monitoring</a></div>
+    <div class="job-dates">03.2025 — present</div>
+  </div>
+  <p class="job-desc">Multi-region monitoring platform for ASIC miners: real-time telemetry, alerts, group operations, Telegram Mini App, fault-tolerant infrastructure.</p>
+  <ul>
+    <li>Go backend: gRPC streaming for agents + REST API (Echo); Bun/pgx, JWT, 2FA (TOTP), goose, Swagger</li>
+    <li>Real-time metrics aggregation + micro-batching of status writes so writes don't block the hot path</li>
+    <li>Telegram Mini App (React 19 / TypeScript / Vite / Tailwind): dashboards, group farm operations, i18n</li>
+    <li>Designed and deployed from scratch: Docker Swarm (7 nodes, 3 regions), PostgreSQL HA (Patroni/etcd/HAProxy/PgBouncer), GlusterFS, VictoriaMetrics/VictoriaLogs/Grafana, Ansible bootstrap, GitHub Actions CI/CD</li>
+    <li><b>Initiative:</b> proposed a multi-region fault-tolerant infrastructure; after management approval, led design and rollout of the cluster</li>
+  </ul>
+  <p class="result"><b>Business result:</b> stable farm monitoring across 3 regions without downtime when one site fails, faster incident response via alerts, less manual work on updates and releases.</p>
+  <p class="stack">Go · Echo · gRPC · PostgreSQL HA · Redis · React · Docker Swarm · Ansible · VictoriaMetrics · Grafana · GitHub Actions</p>
+</article>
+
+<article class="job">
+  <div class="job-head">
+    <div class="job-title">Fullstack Developer — <a href="https://sgvno.com">Signvano</a></div>
+    <div class="job-dates">08.2025 — present</div>
+  </div>
+  <p class="job-desc">Real-time video streaming and content generation platform (sign language, AI avatars).</p>
+  <ul>
+    <li>Distributed architecture: API Gateway (Go) + streaming servers with gRPC service discovery and load balancing</li>
+    <li>Video pipeline: WebSocket / HTTP/3 + QUIC (WebTransport) → WebRTC SFU → NATS → GPU clients over gRPC</li>
+    <li>Task queue abstraction (PostgreSQL/Redis), Stripe billing, React admin panel, CI/CD for streaming nodes</li>
+    <li><b>Initiative:</b> proposed splitting the API Gateway and streaming nodes for scale; after approval, organized the rollout and auto-deploy</li>
+  </ul>
+  <p class="result"><b>Business result:</b> the platform handles growing load, monetization via Stripe subscriptions is live, new streaming servers ship faster with less manual ops.</p>
+  <p class="stack">Go · gRPC · PostgreSQL · Redis · NATS · WebRTC · HTTP/3 · React · TypeScript · Docker · GitHub Actions</p>
+</article>
+
+<article class="job">
+  <div class="job-head">
+    <div class="job-title">Fullstack Developer — LiveVoice · pet project</div>
+    <div class="job-dates">06.2026 — present</div>
+  </div>
+  <p class="job-desc">Cross-platform desktop app for real-time bidirectional voice translation in video calls (e.g. Google Meet).</p>
+  <ul>
+    <li>Low-latency pipeline: audio capture → STT → translation → TTS in both directions</li>
+    <li>Native Rust audio engine (cpal, WASAPI loopback, PulseAudio/pactl), exposed via N-API</li>
+    <li>Providers: Deepgram, Google Gemini Live, Kie, Edge TTS; echo guard, TTS cache, virtual mic routing</li>
+    <li>Leading migration from Electron + Node to Tauri 2 with an all-Rust backend</li>
+  </ul>
+  <p class="result"><b>Result:</b> working speech-to-speech translation tool with a native cross-platform audio stack.</p>
+  <p class="stack">Rust · cpal · WASAPI · Tauri · Electron · TypeScript · WebSocket · Deepgram · Google Gemini Live · Edge TTS</p>
+</article>
+
+<article class="job">
+  <div class="job-head">
+    <div class="job-title">Fullstack Developer — <a href="https://signsync.go-rshok.ru/">SignSync</a> · pet project</div>
+    <div class="job-dates">06.2026 — present</div>
+  </div>
+  <p class="job-desc">Cross-platform Russian Sign Language (RSL) translator: speech/text → gloss → seamless avatar video. Desktop, Android, landing, Rust backend.</p>
+  <ul>
+    <li>Pipeline: mic/text → STT → Gemini gloss (RSL) → seamless clip playlist (batch + realtime)</li>
+    <li>Tauri 2 app (React 19 / TypeScript / Vite / Tailwind + Rust): cpal capture, Stronghold keys, seamless video player</li>
+    <li>Rust API (Axum + SQLx + PostgreSQL): Telegram auth, JWT, credits/api_key, STT proxy (Deepgram/ElevenLabs)</li>
+    <li>GPU video pipeline (RIFE + FFmpeg); nginx auth_request for /clips/; Docker Compose + GitHub Actions builds</li>
+  </ul>
+  <p class="result"><b>Result:</b> working RSL product with cross-platform clients, Telegram accounts, monetization hooks, protected media delivery.</p>
+  <p class="stack">Rust · Axum · SQLx · PostgreSQL · Tauri 2 · React · Deepgram · ElevenLabs · Gemini · RIFE · Docker · GitHub Actions</p>
+</article>
+
+<article class="job">
+  <div class="job-head">
+    <div class="job-title">Fullstack Developer — <a href="https://t.me/svetlanapsyybot">SvetlanaBot</a></div>
+    <div class="job-dates">03.2026 — present</div>
+  </div>
+  <p class="job-desc">AI therapist on Telegram: LLM chat, Mini App, subscriptions, content generation.</p>
+  <ul>
+    <li>Go backend: Telegram webhook, REST API, WebSocket chat with streaming LLM responses</li>
+    <li>Telegram Mini App in React; OpenAI, ElevenLabs, fal.ai/kie.ai; Robokassa billing; bulk broadcasts with rate limiting</li>
+    <li><b>Initiative:</b> proposed and shipped subscriptions, credits, and a Mini App; aligned with the client and led the launch</li>
+  </ul>
+  <p class="result"><b>Business result:</b> the product launched with clear monetization; users go from onboarding to payment without manual support at every step.</p>
+  <p class="stack">Go · PostgreSQL · Redis · React · TypeScript · Docker · Prometheus · Grafana</p>
+</article>
+
+<article class="job">
+  <div class="job-head">
+    <div class="job-title">Backend Developer — <a href="https://rpine.xyz/">RPine</a></div>
+    <div class="job-dates">2023 — present</div>
+  </div>
+  <p class="job-desc">TON ecosystem startup: smart DEX aggregator with optimal swap routing and transparent fees.</p>
+  <ul>
+    <li>Backend APIs for quotes/swaps; liquidity aggregation from 4+ TON DEXs</li>
+    <li>TON blockchain indexer; Pathfinder multi-hop routing engine; Telegram bot (swaps, private pools)</li>
+    <li><b>Initiative:</b> proposed Pathfinder and private pools with a price lock; management approved, and these became core product features</li>
+  </ul>
+  <p class="result"><b>Business result:</b> users get better swap routes and transparent fees; Telegram entry lowered the barrier and expanded reach.</p>
+  <p class="stack">Go · Python · PostgreSQL · Redis · TON · Telegram Bot API · Docker</p>
+</article>
+
+<article class="job">
+  <div class="job-head">
+    <div class="job-title">Fullstack Developer — <a href="https://screener-spread.rpine.xyz/">Screener Exchange Spread</a> · pet project</div>
+    <div class="job-dates">01.2025 — present</div>
+  </div>
+  <p class="job-desc">Spread screener and trading bot for crypto exchanges (RPine ecosystem).</p>
+  <ul>
+    <li>Real-time quote collection, spread/arbitrage computation, trading logic, React live dashboard, Telegram auth</li>
+  </ul>
+  <p class="result"><b>Result:</b> tool for monitoring cross-exchange spreads and automating trading decisions.</p>
+  <p class="stack">Go · Python · PostgreSQL · Redis · React · TypeScript · Docker</p>
+</article>
+
+<article class="job">
+  <div class="job-head">
+    <div class="job-title">Backend Developer — <a href="https://t.me/photopingvin_bot">PhotoPingvin Bot</a></div>
+    <div class="job-dates">02.2025 — present</div>
+  </div>
+  <p class="job-desc">Telegram bot for generating photos, videos, and music.</p>
+  <ul>
+    <li>aiogram + Django Ninja REST API; Celery + Celery Beat pipeline; fal.ai/kie.ai; Robokassa billing</li>
+    <li><b>Initiative:</b> proposed moving long AI jobs to Celery queues so the bot stays responsive; approved and implemented by me</li>
+  </ul>
+  <p class="result"><b>Business result:</b> the bot stays stable during long generations; paid generations are live and drive repeat purchases.</p>
+  <p class="stack">Python · Django · Django Ninja · aiogram · Celery · Redis · PostgreSQL · Docker</p>
+</article>
+
+<article class="job">
+  <div class="job-head">
+    <div class="job-title">Fullstack Developer — <a href="https://otty.go-rshok.ru">Otty ASL</a></div>
+    <div class="job-dates">04.2026 — present</div>
+  </div>
+  <p class="job-desc">EdTech platform for learning American Sign Language (ASL).</p>
+  <ul>
+    <li>Gamified learning (lessons, dictionary, practice, leaderboard); streaks/rewards; subscription + trial model</li>
+  </ul>
+  <p class="result"><b>Result:</b> interactive ASL learning platform with retention through gamification.</p>
+  <p class="stack">React · TypeScript · PostgreSQL · Docker</p>
+</article>
+
+<article class="job">
+  <div class="job-head">
+    <div class="job-title">Backend Developer — <a href="https://getrealprice.com">GetRealPrice</a></div>
+    <div class="job-dates">05.2022 — 05.2023</div>
+  </div>
+  <p class="job-desc">B2B SaaS: product matching and price monitoring for retail and FMCG (13 countries).</p>
+  <ul>
+    <li>Django + FastAPI REST APIs; Celery price parsing/monitoring; product matching across marketplaces</li>
+    <li><b>Initiative:</b> proposed queue and cache optimizations for hot queries; after approval, reduced database load</li>
+  </ul>
+  <p class="result"><b>Business result:</b> the backend scaled with clients across 13 countries, faster API responses, fewer overload incidents.</p>
+  <p class="stack">Python · Django · FastAPI · Celery · Redis · PostgreSQL · Docker</p>
+</article>
+
+<article class="job">
+  <div class="job-head">
+    <div class="job-title">Fullstack Developer — <a href="https://github.com/devpunks20/pagga">Pagga</a></div>
+    <div class="job-dates">11.2025 — 01.2026</div>
+  </div>
+  <p class="job-desc">Web3 SaaS for crypto companies: contracts, signatures, treasury, compliance.</p>
+  <ul>
+    <li>Go backend + Next.js dashboard; AI agents for SAFE/NDA/employment agreements; e-signatures via Privy; Solana + Plaid treasury</li>
+    <li><b>Initiative:</b> proposed AI agents for auto-generating contracts; idea was accepted, I led rollout and signature integration</li>
+  </ul>
+  <p class="result"><b>Business result:</b> clients prepare and sign documents faster in one product; less manual legal work on standard contracts.</p>
+  <p class="stack">Go · Gin · GORM · PostgreSQL · Next.js · TypeScript · Privy · Plaid · Docker</p>
+</article>
+
+<h2>Education</h2>
+<div class="edu-block">
+  <div class="school">Simferopol Polytechnic College</div>
+  <div class="details">Major: <b>Information Systems and Programming</b> · Qualification: <b>Programmer</b></div>
+  <div class="details">Vocational secondary education</div>
+</div>
+
+<h2>Hobbies & interests</h2>
+<ul class="hobbies">
+  <li><b>Dog training & animal psychology</b> — I train my dog, study zoopsychology, and completed a dog-training course. It builds patience, systematic thinking, and feedback loops — the same habits I use in engineering.</li>
+  <li><b>Continuous growth in IT</b> — actively exploring AI-assisted development (“vibe coding”): courses on multi-agent systems, agent orchestration, and shipping LLM features into products. I follow AI-assisted engineering practices and apply them in real work right away.</li>
+  <li><b>Pet projects across domains</b> — I regularly build my own products to learn new stacks and domains: real-time voice translation (LiveVoice), Russian Sign Language translator (SignSync), ASL EdTech (Otty). For me this is how I keep growing as an engineer instead of staying in one niche.</li>
+</ul>
+
+<footer>
+  Open to interesting projects and opportunities · Telegram @go_rshok · Last updated: July 2026
+</footer>
+
+</body>
+</html>
