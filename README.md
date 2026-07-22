@@ -351,7 +351,7 @@ A B2B SaaS: product matching and price monitoring for retail and FMCG ([13 count
 
 ---
 
-### Fullstack Developer — [Pagga](https://github.com/devpunks20/pagga)
+### Fullstack Developer — [Pagga](https://app.pagga.io) · [source](https://github.com/devpunks20/pagga)
 `11.2025 — 01.2026`
 
 A Web3 SaaS for crypto companies: contracts, signatures, treasury, compliance.
