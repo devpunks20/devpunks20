@@ -28,7 +28,7 @@
 
 Fullstack developer, **6 years of experience**, 24 y.o. Hold a driver's license. Main languages — **Go** and **Python**; also React / TypeScript and Rust. I build products from idea to launch: backend, UI, infrastructure, and deploy.
 
-Strong areas: microservices, real-time systems, fault-tolerant infrastructure, Telegram bots and Mini Apps, AI integrations, payments, DeFi on TON, desktop apps (Tauri / Electron), speech-to-speech and **sign-language** translation.
+Strong areas: microservices, real-time systems, fault-tolerant infrastructure, Telegram bots and Mini Apps, AI integrations (**RAG**, agents, LLM), payments, DeFi on TON, desktop apps (Tauri / Electron), speech-to-speech and **sign-language** translation.
 
 Proactive employee: I suggest improvements myself, get management buy-in, and deliver the implementation. Comfortable both in a team and working independently.
 
@@ -64,7 +64,7 @@ Rust (cpal, WASAPI, tokio, serde, **Axum**, **SQLx**) · **Tauri 2** · Electron
 React · Next.js · TypeScript · Vite · Tailwind CSS · TanStack Query / Table · Telegram Mini Apps · Chrome Extensions
 
 #### AI & media generation
-[OpenAI](https://openai.com/) · [Deepgram](https://deepgram.com/) (STT/TTS) · [Google Gemini](https://ai.google.dev/) / Gemini Live (gloss, real-time STT + translation + TTS) · [ElevenLabs](https://elevenlabs.io/) (TTS/STT) · Edge TTS · [fal.ai](https://fal.ai/) · [kie.ai](https://kie.ai/) · LLM · image / video / audio generation · **RIFE** / FFmpeg video pipelines
+[OpenAI](https://openai.com/) (Chat + Embeddings) · **RAG** (hybrid BM25 + dense retrieval) · AI agents / tool calling · SSE streaming · [Deepgram](https://deepgram.com/) (STT/TTS) · [Google Gemini](https://ai.google.dev/) / Gemini Live · [ElevenLabs](https://elevenlabs.io/) (TTS/STT) · Edge TTS · [fal.ai](https://fal.ai/) · [kie.ai](https://kie.ai/) · LLM · image / video / audio generation · **RIFE** / FFmpeg video pipelines / morph-aware stitch
 
 #### Blockchain & DeFi
 [TON](https://ton.org/) · DEX aggregators · blockchain indexer · swap routing · multi-hop paths · Jettons · TON Connect
@@ -184,28 +184,57 @@ A cross-platform desktop app for **real-time bidirectional voice translation** i
 ### Fullstack Developer — [SignSync](https://signsync.go-rshok.ru/) · pet project
 `06.2026 — present`
 
-A cross-platform **Russian Sign Language (RSL)** translator: speech or text → gloss → seamless avatar video. Desktop (Windows/Linux), Android, a product landing, and a Rust backend for auth, credits, STT proxy, and protected clip delivery.
+A speech/text → **RSL / ASL** sign-video platform: native **Tauri** desktop app + **React** web cabinet. Server-side **Translation Agent** with custom **hybrid RAG** (BM25 + OpenAI embeddings), web **Assistant**, video trainings, Telegram auth, and credits.
 
-<img src="assets/projects/SignSync1.png" alt="SignSync — desktop app (dark)" width="100%"/>
+<details open>
+<summary><b>🖥 Desktop — native Tauri app</b></summary>
+<br/>
+
+<img src="assets/projects/SignSync1.png" alt="SignSync desktop — dark theme" width="100%"/>
 
 <table>
   <tr>
-    <td width="68%"><img src="assets/projects/SignSync2.png" alt="SignSync — desktop app (light)" width="100%"/></td>
-    <td width="32%"><img src="assets/projects/SignSync3.png" alt="SignSync — narrow / mobile layout" width="100%"/></td>
+    <td width="68%"><img src="assets/projects/SignSync2.png" alt="SignSync desktop — light theme" width="100%"/></td>
+    <td width="32%"><img src="assets/projects/SignSync3.png" alt="SignSync desktop — narrow layout" width="100%"/></td>
+  </tr>
+</table>
+</details>
+
+<details open>
+<summary><b>🌐 Web platform — landing, Assistant, trainings</b></summary>
+<br/>
+
+<img src="assets/projects/SignSync11.png" alt="SignSync web — landing" width="100%"/>
+
+<table>
+  <tr>
+    <td width="50%"><img src="assets/projects/SignSync12.png" alt="SignSync — Assistant translate" width="100%"/></td>
+    <td width="50%"><img src="assets/projects/SignSync13.png" alt="SignSync — Assistant help / RAG chat" width="100%"/></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="assets/projects/SignSync14.png" alt="SignSync — RSL dactyl training" width="100%"/></td>
+    <td width="50%"><img src="assets/projects/SignSync15.png" alt="SignSync — ASL Family training" width="100%"/></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="assets/projects/SignSync16.png" alt="SignSync — ASL training clip" width="100%"/></td>
+    <td width="50%"><img src="assets/projects/SignSync17.png" alt="SignSync — training quiz" width="100%"/></td>
   </tr>
 </table>
 
+<img src="assets/projects/SignSync18.png" alt="SignSync — quiz feedback" width="100%"/>
+</details>
+
 **What I did:**
-- Built an end-to-end pipeline **mic / text → STT → Gemini gloss (РЖЯ) → playlist of seamless clips** with batch and **realtime** modes
-- Shipped a **Tauri 2** app (React 19 / TypeScript / Vite / Tailwind + Rust): native **cpal** audio capture, provider keys in Stronghold, dual-layer **seamless video player** (crossfade, REST morph trim, Android WebView quirks)
-- Wrote a **Rust API (Axum + SQLx + PostgreSQL)**: Telegram login (deeplink + webhook), JWT, users / **credits** / **api_key**, STT proxy (**Deepgram** / **ElevenLabs**, HTTP + WebSocket), release catalog and downloads
-- Built a React landing with **Telegram QR / deeplink auth**, personal cabinet (API key, credits), and multi-platform download grid (AppImage, Windows, Android)
-- Designed a GPU video pipeline (**RIFE** + FFmpeg): normalize every clip so it starts/ends on the same REST pose for jump-free chaining; video-manifest + nginx **`auth_request`** gate for `/clips/`
-- Infra & CI: Docker Compose (backend, landing, nginx, Postgres), edge TLS, **GitHub Actions** builds for Linux / Windows / Android
+- Built a monorepo: **Tauri 2** desktop (mic/text → STT → agent gloss → seamless clips) + **React** web platform (landing, cabinet, Assistant, trainings) + **Rust (Axum)** API on **PostgreSQL**
+- Implemented a **Translation Agent** (classic / realtime): phrase matching → hybrid retrieve → OpenAI gloss generate/rewrite → coverage gate → OOV nearest/fingerspell → playlist assembly
+- Designed **custom hybrid RAG** (no LangChain / Pinecone): curated knowledge packs, BM25 indexes, OpenAI **`text-embedding-3-small`**, in-process cosine hybrid retrieval for signs + FAQ
+- Shipped a web **RAG Assistant** with intent routing, tool calling, SSE streaming, chat history/feedback, credit metering, and morph-aware **ffmpeg** playlist stitch
+- Proxied realtime/batch **STT** (Deepgram / ElevenLabs) via backend WebSocket/HTTP; Telegram OAuth, JWT, API keys, credits
+- Added **RSL / ASL** trainings (lessons, quizzes, progress), multi-avatar variants, Docker/Nginx deploy, knowledge build + eval tooling
 
-**Result:** a working RSL translation product with cross-platform clients, Telegram-based accounts, monetization hooks (credits / API key), protected media delivery, and automated desktop/mobile releases.
+**Result:** a full sign-language product — native desktop client and web platform with agent+RAG translation, AI assistant, and interactive trainings.
 
-`Rust` · `Axum` · `SQLx` · `PostgreSQL` · `Tauri 2` · `React` · `TypeScript` · `Vite` · `Tailwind` · `cpal` · `WebSocket` · `Deepgram` · `ElevenLabs` · `Google Gemini` · `Telegram Auth` · `Nginx` · `RIFE` · `Docker` · `GitHub Actions`
+`Rust` · `Axum` · `SQLx` · `PostgreSQL` · `Tauri 2` · `React` · `TypeScript` · `Vite` · `Tailwind` · `OpenAI` · `RAG` · `BM25` · `Embeddings` · `SSE` · `Deepgram` · `ElevenLabs` · `Telegram Auth` · `Nginx` · `RIFE` · `FFmpeg` · `Docker` · `GitHub Actions`
 
 ---
 

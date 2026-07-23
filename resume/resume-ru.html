@@ -30,6 +30,11 @@
   .edu-block .school { font-weight: 700; }
   .edu-block .details { color: #333; margin-top: 2px; }
   .hobbies { margin: 0 0 4px 14px; font-size: 8.5pt; }
+  .gallery { margin: 6px 0 8px; page-break-inside: avoid; }
+  .gallery-label { font-size: 8pt; font-weight: 700; color: #1565c0; margin: 4px 0 3px; }
+  .gallery img { width: 100%; display: block; border-radius: 3px; margin-bottom: 3px; }
+  .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-bottom: 3px; }
+  .gallery-row-desktop { display: grid; grid-template-columns: 2fr 1fr; gap: 3px; }
   h2 {
     font-size: 11pt;
     text-transform: uppercase;
@@ -85,7 +90,7 @@
 <h2>Обо мне</h2>
 <div class="about">
   <p>Fullstack-разработчик, <b>6 лет опыта</b>, 24 года. Есть водительские права. Основные языки — <b>Go</b> и <b>Python</b>, также React / TypeScript и Rust. Делаю продукты от идеи до запуска: backend, интерфейс, инфраструктура, деплой.</p>
-  <p>Сильные стороны: микросервисы, системы в реальном времени, отказоустойчивая инфраструктура, Telegram-боты и Mini Apps, AI-интеграции, платежи, DeFi на TON, десктоп-приложения (Tauri / Electron).</p>
+  <p>Сильные стороны: микросервисы, системы в реальном времени, отказоустойчивая инфраструктура, Telegram-боты и Mini Apps, AI-интеграции (RAG, агенты, LLM), платежи, DeFi на TON, десктоп-приложения (Tauri / Electron).</p>
   <p>Активный сотрудник: сам предлагаю улучшения, согласовываю с руководством и довожу внедрение до результата. Умею работать и в команде, и самостоятельно.</p>
 </div>
 
@@ -107,7 +112,7 @@
   <div class="skill-row"><b>Real-time:</b> WebRTC, WebSocket, NATS, HTTP/3, QUIC, WebTransport</div>
   <div class="skill-row"><b>Desktop:</b> Rust (cpal, Axum, SQLx), Tauri 2, Electron, N-API, Android</div>
   <div class="skill-row"><b>Frontend:</b> React, Next.js, TypeScript, Vite, Tailwind, TanStack Query, Telegram Mini Apps</div>
-  <div class="skill-row"><b>AI:</b> OpenAI, Deepgram, Google Gemini / Gemini Live, ElevenLabs, Edge TTS, fal.ai, kie.ai, RIFE</div>
+  <div class="skill-row"><b>AI:</b> OpenAI (Chat + Embeddings), RAG (hybrid BM25 + dense), AI-агенты / tool calling, SSE, Deepgram, Gemini, ElevenLabs, fal.ai, kie.ai, RIFE / FFmpeg</div>
   <div class="skill-row"><b>Blockchain:</b> TON, DEX-агрегаторы, индексер, маршрутизация свопов, Jettons, TON Connect</div>
   <div class="skill-row"><b>Платежи:</b> Stripe, Robokassa, Privy, Plaid, Solana</div>
   <div class="skill-row"><b>DevOps:</b> Docker, Docker Swarm, Ansible, GlusterFS, Nginx, GitHub Actions, Prometheus, VictoriaMetrics, Grafana</div>
@@ -170,15 +175,34 @@
     <div class="job-title">Fullstack-разработчик — <a href="https://signsync.go-rshok.ru/">SignSync</a> · пет-проект</div>
     <div class="job-dates">06.2026 — настоящее время</div>
   </div>
-  <p class="job-desc">Кроссплатформенный переводчик на русский жестовый язык (РЖЯ): речь/текст → глосс → бесшовное видео аватара. Desktop, Android, лендинг, Rust-бэкенд.</p>
+  <p class="job-desc">Платформа речь/текст → видео на РЖЯ / ASL: нативное Tauri-приложение + React веб-кабинет. Translation Agent с кастомным hybrid RAG (BM25 + OpenAI embeddings), веб-Assistant, тренинги, Telegram-auth, кредиты.</p>
+  <div class="gallery">
+    <div class="gallery-label">Desktop — нативное Tauri-приложение</div>
+    <img src="../assets/projects/SignSync1.png" alt="SignSync desktop тёмная тема"/>
+    <div class="gallery-row-desktop">
+      <img src="../assets/projects/SignSync2.png" alt="SignSync desktop светлая тема"/>
+      <img src="../assets/projects/SignSync3.png" alt="SignSync desktop узкий"/>
+    </div>
+    <div class="gallery-label">Web-платформа — лендинг, Assistant, тренинги</div>
+    <img src="../assets/projects/SignSync11.png" alt="SignSync лендинг"/>
+    <div class="gallery-grid">
+      <img src="../assets/projects/SignSync12.png" alt="Assistant перевод"/>
+      <img src="../assets/projects/SignSync13.png" alt="Assistant RAG-чат"/>
+      <img src="../assets/projects/SignSync14.png" alt="Тренинг РЖЯ"/>
+      <img src="../assets/projects/SignSync15.png" alt="Тренинг ASL"/>
+      <img src="../assets/projects/SignSync16.png" alt="Клип ASL"/>
+      <img src="../assets/projects/SignSync17.png" alt="Квиз тренинга"/>
+    </div>
+    <img src="../assets/projects/SignSync18.png" alt="Обратная связь квиза"/>
+  </div>
   <ul>
-    <li>Пайплайн: микрофон/текст → STT → Gemini-глосс (РЖЯ) → плейлист бесшовных клипов (batch + realtime)</li>
-    <li>Приложение Tauri 2 (React 19 / TypeScript / Vite / Tailwind + Rust): cpal, Stronghold, seamless video player</li>
-    <li>Rust API (Axum + SQLx + PostgreSQL): Telegram-авторизация, JWT, кредиты/api_key, STT-прокси (Deepgram/ElevenLabs)</li>
-    <li>GPU-видео-пайплайн (RIFE + FFmpeg); nginx auth_request для /clips/; Docker Compose + сборки GitHub Actions</li>
+    <li>Monorepo: Tauri 2 desktop + React web (лендинг, кабинет, Assistant, тренинги) + Rust Axum API на PostgreSQL</li>
+    <li>Translation Agent (classic/realtime): match фраз → hybrid retrieve → OpenAI глосс → coverage/OOV → плейлист</li>
+    <li>Кастомный hybrid RAG (без LangChain/Pinecone): BM25-packs + OpenAI text-embedding-3-small + in-process cosine hybrid</li>
+    <li>Веб RAG Assistant: интенты, tool calling, SSE, кредиты; тренинги РЖЯ/ASL; STT-прокси (Deepgram/ElevenLabs); Docker/Nginx</li>
   </ul>
-  <p class="result"><b>Результат:</b> рабочий продукт перевода на РЖЯ с кроссплатформенными клиентами, аккаунтами через Telegram и защищённой раздачей медиа.</p>
-  <p class="stack">Rust · Axum · SQLx · PostgreSQL · Tauri 2 · React · Deepgram · ElevenLabs · Gemini · RIFE · Docker · GitHub Actions</p>
+  <p class="result"><b>Результат:</b> полноценный продукт жестового перевода — нативный desktop и веб-платформа с agent+RAG, AI-ассистентом и интерактивными тренингами.</p>
+  <p class="stack">Rust · Axum · SQLx · PostgreSQL · Tauri 2 · React · OpenAI · RAG · BM25 · Embeddings · SSE · Deepgram · ElevenLabs · RIFE · FFmpeg · Docker</p>
 </article>
 
 <article class="job">
